@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Messages;
+using Messages.Commands;
 using NServiceBus;
 using NServiceBus.Logging;
 
