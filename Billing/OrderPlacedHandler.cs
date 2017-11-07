@@ -7,13 +7,17 @@ namespace Billing
 {
     public class OrderPlacedHandler : IHandleMessages<OrderPlaced>
     {
-        private static ILog log = LogManager.GetLogger<OrderPlacedHandler>();
+        private static ILog _log = LogManager.GetLogger<OrderPlacedHandler>();
 
-        public Task Handle(OrderPlaced message, IMessageHandlerContext context)
+        public async Task Handle(OrderPlaced message, IMessageHandlerContext context)
         {
-            log.Info($"Received OrderPlaced, OrderId = {message.OrderId} - Charging credit card...");
+            _log.Info($"Received OrderPlaced, OrderId = {message.OrderId} - Charging credit card...");
 
-            return Task.CompletedTask;
+            // do some stuff
+            await context.Publish(new OrderBilled
+            {
+                OrderId = message.OrderId
+            });
         }
     }
 }

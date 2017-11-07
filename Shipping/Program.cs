@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NServiceBus;
 
-namespace Billing
+namespace Shipping
 {
     class Program
     {
@@ -13,9 +13,9 @@ namespace Billing
 
         static async Task Main()
         {
-            Console.Title = "Billing";
+            Console.Title = "Shipping";
 
-            var endpointConfiguration = new EndpointConfiguration("Billing");
+            var endpointConfiguration = new EndpointConfiguration("Shipping");
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
 
