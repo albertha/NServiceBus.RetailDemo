@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Messages.Commands;
 using NServiceBus;
 
 namespace Sales
@@ -22,6 +23,9 @@ namespace Sales
             var endpointConfiguration = new EndpointConfiguration("Sales");
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
+
+            var routing = transport.Routing();
+            routing.RouteToEndpoint(typeof(StartOrder), "Shipping");
 
             var endpointInstance = await Endpoint.Start(endpointConfiguration).ConfigureAwait(false);
 

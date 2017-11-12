@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CancelOrder.cs" />
+    <Compile Include="Commands\CompleteOrder.cs" />
+    <Compile Include="Commands\StartOrder.cs" />
     <Compile Include="Events\OrderBilled.cs" />
     <Compile Include="Events\OrderPlaced.cs" />
     <Compile Include="Commands\PlaceOrder.cs" />

@@ -26,6 +26,7 @@ namespace ClientUI
 
             var routing = transport.Routing();
             routing.RouteToEndpoint(typeof(PlaceOrder), "Sales");
+            routing.RouteToEndpoint(typeof(StartOrder), "Shipping");
 
             var endpointInstance = await Endpoint.Start(endpointConfiguration).ConfigureAwait(false);
 
@@ -59,6 +60,16 @@ namespace ClientUI
                         await endpointInstance.Send(command)
                             .ConfigureAwait(false);
 
+                        break;
+
+                    case ConsoleKey.S:
+                        var startOrder = new StartOrder
+                        {
+                            OrderId = Guid.NewGuid().ToString()
+                        };
+                        log.Info($"Sending StartOrder command, OrderId = {startOrder.OrderId}");
+                        await endpointInstance.Send(startOrder)
+                            .ConfigureAwait(false);
                         break;
 
                     case ConsoleKey.Q:
