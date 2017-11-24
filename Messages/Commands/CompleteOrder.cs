@@ -1,9 +1,11 @@
-﻿using NServiceBus;
+﻿using System;
+using NServiceBus;
 
 namespace Messages.Commands
 {
     public class CompleteOrder : ICommand
     {
-        public string OrderId { get; set; }
+        public Guid OrderId { get; set; }
+        public string OrderDescription { get; set; }
     }
 }

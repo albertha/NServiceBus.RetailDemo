@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing", "Billing\Billing.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shipping", "Shipping\Shipping.csproj", "{7A8F7607-3C34-4ED0-8813-1002647CADDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRavenDbPersistenceUsage", "SimpleRavenDbPersistenceUsage\SimpleRavenDbPersistenceUsage.csproj", "{24A5EF6C-3346-4A45-BB5B-5F09393C9759}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7A8F7607-3C34-4ED0-8813-1002647CADDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A8F7607-3C34-4ED0-8813-1002647CADDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A8F7607-3C34-4ED0-8813-1002647CADDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A5EF6C-3346-4A45-BB5B-5F09393C9759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A5EF6C-3346-4A45-BB5B-5F09393C9759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A5EF6C-3346-4A45-BB5B-5F09393C9759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A5EF6C-3346-4A45-BB5B-5F09393C9759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

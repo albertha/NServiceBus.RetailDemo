@@ -27,6 +27,7 @@ namespace ClientUI
             var routing = transport.Routing();
             routing.RouteToEndpoint(typeof(PlaceOrder), "Sales");
             routing.RouteToEndpoint(typeof(StartOrder), "Shipping");
+            routing.RouteToEndpoint(typeof(StartOrder), "Samples.RavenDB.Server");
 
             var endpointInstance = await Endpoint.Start(endpointConfiguration).ConfigureAwait(false);
 
@@ -52,7 +53,7 @@ namespace ClientUI
                         // Instantiate the command
                         var command = new PlaceOrder
                         {
-                            OrderId = Guid.NewGuid().ToString()
+                            OrderId = Guid.NewGuid()
                         };
 
                         // Send the command to the local endpoint
@@ -65,7 +66,7 @@ namespace ClientUI
                     case ConsoleKey.S:
                         var startOrder = new StartOrder
                         {
-                            OrderId = Guid.NewGuid().ToString()
+                            OrderId = Guid.NewGuid()
                         };
                         log.Info($"Sending StartOrder command, OrderId = {startOrder.OrderId}");
                         await endpointInstance.Send(startOrder)
